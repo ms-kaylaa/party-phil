@@ -1,0 +1,9 @@
+from enum import StrEnum
+
+
+class Permission(StrEnum):
+    EXEC = "EXEC"
+    DELETE_FILES = "DELETE_FILES",
+    GRANT_PERMISSIONS = "GRANT_PERMISSIONS",
+    PLAY_SOUNDBOARD = "PLAY_SOUNDBOARD",
+    MANAGE_COMMANDS = "MANAGE_COMMANDS"
