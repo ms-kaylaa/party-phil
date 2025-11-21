@@ -24,5 +24,5 @@ async def run(message: discord.Message, args: list[str], client: discord.Client 
 
     await attach[0].save(file_dir + filename)
     await message.delete()
-    await message.channel.send(f"saved as {filename}!\nthank you for uploading to party phil! 20 philcoin have been deposited into your ph!balance!")
-    user.inc_property("philcoin", 20)
+    await message.channel.send(f"saved as {filename}!") #\nthank you for uploading to party phil! 20 philcoin have been deposited into your ph!balance!
+    #user.inc_property("philcoin", 20)

@@ -23,6 +23,7 @@ async def on_message(client:discord.Client, message:discord.Message):
                     await message.channel.send("SUCCESS | i know what this command means!")
 
                 case 'givecoin':
+                    """
                     userid = commanddata['user']
                     amt = commanddata['amount']
 
@@ -30,6 +31,8 @@ async def on_message(client:discord.Client, message:discord.Message):
                     user.inc_property("philcoin", amt)
 
                     await message.channel.send(f"SUCCESS | added {amt} philcoin to {user.discord_user.display_name}")
+                    """
+                    await message.channel.send("FAILURE | i dont want to")
 
                 case _:
                     await message.channel.send("FAILURE | i don't know what this means")
@@ -42,6 +45,9 @@ async def on_message(client:discord.Client, message:discord.Message):
                 case "userproperty":
                     propname = requestdata['propertyname']
                     userid = requestdata['userid']
+
+                    if propname == "philcoin":
+                        return await message.channel.send("FAILURE | i dont want to")
 
                     user = globals.get_user_from_id(userid)
                     propvalue = user.get_property(propname)

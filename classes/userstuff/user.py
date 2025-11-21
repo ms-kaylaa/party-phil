@@ -165,3 +165,7 @@ class User:
         if isinstance(permission, str):
             permission = Permission(permission.upper())
         return permission in self._permissions
+    
+    # whatever
+    def __str__(self):
+        return f"User({self.name}, {self.id})"

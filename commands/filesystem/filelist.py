@@ -49,7 +49,7 @@ class Buttons(discord.ui.View):
 
     async def handle(self, interaction:discord.Interaction, button:discord.ui.Button):
         if not interaction.user == self.owner:
-            return
+            return await interaction.response.defer()
         
         await self.callbacks[str(button.emoji)](button,interaction)
 

@@ -9,10 +9,7 @@ import os
 import random
 import traceback
 
-commands_dict = {}
-
-kevin_dict = {} # you gotta be fucking kidding me
-all_kevins:list = None
+from globals import commands_dict, kevin_dict, all_kevins
 
 # -= -- backend!! -- =- #
 
@@ -54,6 +51,8 @@ async def broadcast(event:str, *args):
 
 # handle a bot command
 async def handle_commands(self:discord.Client, message:discord.Message):
+    global commands_dict
+    
     # extract command/args
     no_prefix = message.content[len(PREFIX):]
 

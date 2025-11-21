@@ -6,6 +6,10 @@ from classes.uploads.file import File
 PREFIX = "ph!"
 USER_DIR = User.USER_DIR
 
+commands_dict = {}
+kevin_dict = {} # you gotta be fucking kidding me
+all_kevins = []
+
 client:discord.Client = None
 users:list[User] = None
 disabled_commands:list[str] = []
