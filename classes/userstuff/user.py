@@ -109,7 +109,7 @@ class User:
 
 
 		if self.file_metadata == None:
-			meta_path = f"{file_path}/file_metadata.json"
+			meta_path = f"{self.user_dir}/file_metadata.json"
 
 			if os.path.exists(meta_path):
 				self.file_metadata = read_json(meta_path)
@@ -169,7 +169,7 @@ class User:
 		with open(stats_path, 'w') as f:
 			json.dump(self.stats, f, indent=4)
 
-		meta_path = f"{self.user_dir}/files/file_metadata.json"
+		meta_path = f"{self.user_dir}/file_metadata.json"
 		with open(meta_path, 'w') as f:
 			json.dump(self.file_metadata, f, indent=4)
 	

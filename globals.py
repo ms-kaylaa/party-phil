@@ -4,7 +4,9 @@ from classes.userstuff.user import User
 from classes.uploads.file import File
 
 PREFIX = "ph!"
+
 USER_DIR = User.USER_DIR
+GEN_DIR = "gens/"
 
 commands_dict = {}
 kevin_dict = {} # you gotta be fucking kidding me

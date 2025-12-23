@@ -6,6 +6,7 @@ import asyncio
 import math
 
 from classes.userstuff.user import User
+from classes.uploads.file import File
 
 FILES_PER_PAGE = 11
 
@@ -53,7 +54,18 @@ class Buttons(discord.ui.View):
         return await self.handle(button,interaction)
             
 def prepare_embed(user:User, page, discord_user:discord.User) -> discord.Embed:
-    files = user.files
+    rawfiles = user.files
+
+    pinned_files = []
+    unpinned_files = []
+    for file in rawfiles:
+        if file.get_metadata("pinned"):
+            print(file.name_with_ext)
+            pinned_files.append(file)
+        else:
+            unpinned_files.append(file)
+
+    files:list[File] = pinned_files + unpinned_files
 
     max_pages = math.ceil(len(files)/FILES_PER_PAGE)
 
@@ -71,7 +83,7 @@ def prepare_embed(user:User, page, discord_user:discord.User) -> discord.Embed:
 
     desc = ""
     for file in page_files:
-        desc += f"* {file.name_with_ext} ({approximate_size(file.size)})\n"
+        desc += f"*{" 📌" if file.get_metadata("pinned") == True else ""} {file.name_with_ext} ({approximate_size(file.size)})\n"
 
     embed = discord.Embed(color=discord_user.accent_color,description=desc)
     embed.set_author(name=f"{discord_user.display_name}'s Files",
