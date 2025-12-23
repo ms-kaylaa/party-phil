@@ -2,6 +2,8 @@
 userdata
 token.txt
 
+gens/*-colored.png
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
