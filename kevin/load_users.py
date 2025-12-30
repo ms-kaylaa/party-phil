@@ -15,6 +15,6 @@ async def on_ready(client:discord.Client):
         except Exception as e:
             print(f"failed to load user {id}: {e}")
 
-async def on_exit(client:discord.Client):
-    for user in globals.users:
-        user.save()
+#async def on_exit(client:discord.Client):
+    #for user in globals.users:
+        #user.save()

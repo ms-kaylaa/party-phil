@@ -75,6 +75,7 @@ class Phil(discord.Client):
         global all_kevins
 
         globals.client = self
+        globals.bot_loop = asyncio.get_running_loop()
         
         load_modules("commands", commands_dict)
         load_modules("kevin", kevin_dict)

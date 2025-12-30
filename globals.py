@@ -13,6 +13,8 @@ kevin_dict = {} # you gotta be fucking kidding me
 all_kevins = []
 
 client:discord.Client = None
+bot_loop = None
+
 users:list[User] = None
 disabled_commands:list[str] = []
 

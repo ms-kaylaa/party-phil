@@ -4,6 +4,11 @@ token.txt
 
 gens/*-colored.png
 
+# kevinconnect stuff that doesnt need to be in here
+commands/kc.py
+commands/qc.py
+kevin/kevinconnect.py
+kevinconnect/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

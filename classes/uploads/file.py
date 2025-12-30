@@ -18,6 +18,8 @@ class File:
 
         self.time_uploaded = os.path.getctime(source_path)
 
+        
+
         self.metadata = {}
 
         self.size = os.path.getsize(source_path)
@@ -36,4 +38,4 @@ class File:
 
     def delete(self):
         os.remove(self.path)
-        del self.owner.file_metadata[self.name]
+        del self.owner.file_metadata[self.name_with_ext]
